@@ -1,0 +1,38 @@
+
+Basic Algorithm Scripting: Chunky Monkey
+Write a function that splits an array (first argument) into groups the length of
+size (second argument) and returns them as a two-dimensional array.
+
+
+
+//solution
+
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  var nuarr = [];
+  var temp =[];
+
+  for (var i = 0; i < arr.length; i++)
+  {
+    if ( i % size !== size -1 )
+    {
+      temp.push(arr[i]);
+    }
+    else{
+      temp.push(arr[i]);
+      nuarr.push(temp);
+      temp =[];
+    }
+    //nuarr.push(arr[i]);
+  }
+
+  if (temp.length !== 0){
+    nuarr.push(temp)
+  }
+
+
+  console.log(nuarr); //works!
+  return nuarr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
