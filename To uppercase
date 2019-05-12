@@ -1,0 +1,20 @@
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+
+//solution
+
+String.prototype.replaceAt = function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+character.length);
+};
+
+function titleCase(str) {
+    var nutit = str.split(' ');
+    var upTitle = [];
+    for (var strng in nutit) {
+        upTitle[strng] = nutit[strng].toLowerCase().replaceAt(0, nutit[strng].charAt(0).toUpperCase());
+    }
+    return upTitle.join(' ');
+}
+titleCase("I'm a little tea pot");
